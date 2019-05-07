@@ -1,0 +1,36 @@
+{# templates/base.html.twig #}
+<html>
+<head>
+  <meta charset="UTF8">
+  <title>{%block title %}Projet portofolio | {{ title }}{% endblock %}</title>
+  {% block stylesheets %}{% endblock %}
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+  <link rel="{{ asset('css/noscript.css') }}" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Menu -->
+  <div id="menu">
+    {% block sidebar %}
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+      <li><a href="landing.html">A propos</a></li>
+      <li><a href="generic.html">Projets</a></li>
+      <li><a href="elements.html">Contact</a></li>
+    </ul>
+    {%  endblock %}
+  </div>
+  <div id="content">
+    {% block body %} {%endblock %}
+  </div>
+  {% block javascripts %}{% endblock %}
+  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.scrolly.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.scrollex.min.js') }}"></script>
+  <script src="{{ asset('js/browser.min.js') }}"></script>
+  <script src="{{ asset('js/breakpoints.min.js') }}"></script>
+  <script src="{{ asset('js/util.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+</body>
+</html>
